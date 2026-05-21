@@ -9,7 +9,7 @@ export default function NotasLayout({ children }) {
   ]
 
   return (
-    <div className="flex min-h-screen bg-zinc-900">
+    <div className="flex min-h-screen bg-zinc-900 text-white">
       <aside className="w-72 py-8 px-6 border-r border-zinc-700">
         <div>
           <h1 className="text-4xl font-bold">Notas</h1>
