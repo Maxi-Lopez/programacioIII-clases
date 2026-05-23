@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { useNotes } from "@/app/notes/NotesContext"
 import axios from 'axios'
-
+import ReactMarkdown from "react-markdown"
 
 export default function ChatModal({ isOpen, onClose }) {
   const { notes } = useNotes()
@@ -30,7 +30,7 @@ export default function ChatModal({ isOpen, onClose }) {
     setError(null)
 
     try {
-      const response = await axios.get("/api/ai", {
+      const response = await axios.post("/api/ai", {
         notes: notes,
         messages: [...messages, userMessage]
       })
@@ -82,7 +82,7 @@ export default function ChatModal({ isOpen, onClose }) {
             ${msg.role === "user" ? "bg-zinc-700 ml-auto" : "bg-purple-700"}`}
             >
               <p className="block text-xs text-zinc-400">{msg.role === "user" ? "Tú" : "IA"}</p>
-              <p>{msg.text}</p>
+              <ReactMarkdown>{msg.text}</ReactMarkdown>
             </div>
           ))}
           {loading && <p>cargando...</p>}
