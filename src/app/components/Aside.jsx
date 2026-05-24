@@ -15,16 +15,16 @@ function CategorySection({ category }) {
         onClick={() => setIsOpen(!isOpen)}
         className='flex cursor-pointer items-center gap-2'
       >
-        <h1 className='text-2xl font-semibold hover:text-zinc-500'>
+        <h1 className='text-white text-2xl font-semibold hover:text-zinc-500'>
           {category.title}
         </h1>
-        <svg width="16" height="16" fill="currentColor" className={`bi bi-caret-down-fill ${isOpen ? "rotate-180" : "rotate-0"}`} viewBox="0 0 16 16">
+        <svg width="16" height="16" fill="currentColor" className={`bi bi-caret-down-fill text-white ${isOpen ? "rotate-180" : "rotate-0"}`} viewBox="0 0 16 16">
           <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
         </svg>
       </button>
 
 
-      <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+      <div className={`grid transition-all duration-300 ease-in-out text-white ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
         <ul className=' overflow-hidden'>
           {category.notes.map((subItem, index) => (
             <li key={index} className="pl-4 cursor-pointer transition-all duration-200 hover:scale-105">
@@ -33,7 +33,7 @@ function CategorySection({ category }) {
           ))}
           {
             category.notes.length === 0 && (
-              <li className='text-sm text-zinc-400 p-3'>
+              <li className='text-zinc-200 p-3'>
                 No hay notas aun...
               </li>
             )
@@ -70,8 +70,8 @@ export default function Aside({ data }) {
   return (
     <aside className="w-72 py-8 px-6 border-r border-zinc-700">
       <div>
-        <h1 className="text-4xl font-bold">Notas</h1>
-        <p>Todas nuestras notas</p>
+        <h1 className="text-white text-4xl font-bold">Notas</h1>
+        <p className="text-white mt-2 mb-4">Todas nuestras notas</p>
       </div>
 
       <div className='relative w-full my-4'>
