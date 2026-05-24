@@ -56,7 +56,7 @@ export default function ChatModal({ isOpen, onClose }) {
     <div className="fixed inset-0 z-50 flex items-center justify-center
      bg-black/40 backdrop-blur-xs">
 
-      <div className="w-full max-w-xl bg-zinc-900 border-zinc-700 rounded-lg
+      <div className="text-white w-full max-w-xl bg-zinc-900 border-zinc-700 rounded-lg
       p-4 flex flex-col h-125">
 
         <div className="flex justify-between items-center border-b border-zinc-700 
